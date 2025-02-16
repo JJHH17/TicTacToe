@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#parentDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    justify-content: center;
+    margin-top: 20px;
+}
