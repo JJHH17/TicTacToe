@@ -14,3 +14,11 @@ h1 {
     justify-content: center;
     margin-top: 20px;
 }
+
+#one, #two, #four, #five, #seven, #eight {
+    border-right: 1px solid black;
+}
+
+#one, #two, #three, #four, #five, #six {
+    border-bottom: 1px solid black;
+}
