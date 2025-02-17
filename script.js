@@ -1,9 +1,9 @@
 // Making a player class 
 
-function player(player1, player2) {
+function player() {
     // User alerts/prompts to get this info from user
-    const player1Name = player1;
-    const player2Name = player2;
+    const player1Name = prompt("Please enter player 1's name");
+    const player2Name = prompt("Please enter player 2's name:");
 
     // Manages scores
     let player1Score = 0;
@@ -26,12 +26,10 @@ function player(player1, player2) {
     scorePrint.innerHTML = `<p>Current Scores</p><p>${player1Name}: ${player1Score}</p><p>${player2Name}: 
     ${player2Score}</p><p>Draw: ${drawScore}`;
 
-
-
-    return {player1, player2, player1Name, player2Name, getPlayer1Score, player1Point, getPlayer2Score, player2Point, 
+    return {player1Name, player2Name, getPlayer1Score, player1Point, getPlayer2Score, player2Point, 
         player1Icon, player2Icon, drawScore, getDrawScore, drawScorePoint};
 }
-let newPlayer = player('James', 'Melissa');
+let newPlayer = player();
 
 
 // IIFE for gameboard
@@ -46,3 +44,18 @@ const gameboard = (function () {
 })();
 
 // Gameplay object
+function gameplay() {
+    // Tells who's turn it is 
+    let player1Turn = true;
+    let player2Turn = false;
+
+    // DOM elements to display turn
+    const turnElement = document.querySelector("#turnElement");
+    if (player1Turn) {
+        turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
+    } else if (player2Turn) {
+        turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
+    };
+}
+
+gameplay();
