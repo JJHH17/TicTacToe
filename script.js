@@ -69,7 +69,7 @@ function gameplay() {
     const nine = document.querySelector("#nine");
 
     let currentPlayer = "x"; // Alternates between "X" and "O"
-    
+
     // Add button click 
     one.addEventListener("click", () => {
         if (currentPlayer == "x") {
@@ -78,6 +78,7 @@ function gameplay() {
             } else {
                 one.innerHTML = "x";
                 gameboard.board[0][0] = 'x'; // Appends to array
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[0][0] != "") {
@@ -85,6 +86,7 @@ function gameplay() {
             } else {
                 one.innerHTML = "o";
                 gameboard.board[0][0] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
     });
@@ -95,6 +97,7 @@ function gameplay() {
             } else {
                 two.innerHTML = "x";
                 gameboard.board[0][1] = 'x';
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[0][1] != "") {
@@ -102,6 +105,7 @@ function gameplay() {
             } else {
                 two.innerHTML = "o";
                 gameboard.board[0][1] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
     });
@@ -112,6 +116,7 @@ function gameplay() {
             } else {
                 three.innerHTML = "x";
                 gameboard.board[0][2] = 'x';
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[0][2] != "") {
@@ -119,6 +124,7 @@ function gameplay() {
             } else {
                 three.innerHTML = "o";
                 gameboard.board[0][2] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
     });
@@ -129,6 +135,7 @@ function gameplay() {
             } else {
                 four.innerHTML = "x";
                 gameboard.board[1][0] = 'x';
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[1][0] != "") {
@@ -136,6 +143,7 @@ function gameplay() {
             } else {
                 four.innerHTML = "o";
                 gameboard.board[1][0] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
     });
@@ -146,6 +154,7 @@ function gameplay() {
             } else {
                 five.innerHTML = "x";
                 gameboard.board[1][1] = 'x';
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[1][1] != "") {
@@ -153,6 +162,7 @@ function gameplay() {
             } else {
                 five.innerHTML = "o";
                 gameboard.board[1][1] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
     });
@@ -163,6 +173,7 @@ function gameplay() {
             } else {
                 six.innerHTML = "x";
                 gameboard.board[1][2] = 'x';
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[1][2] != "") {
@@ -170,6 +181,7 @@ function gameplay() {
             } else {
                 six.innerHTML = "o";
                 gameboard.board[1][2] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
     });
@@ -180,6 +192,7 @@ function gameplay() {
             } else {
                 seven.innerHTML = "x";
                 gameboard.board[2][0] = 'x';
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[2][0] != "") {
@@ -187,6 +200,7 @@ function gameplay() {
             } else {
                 seven.innerHTML = "o";
                 gameboard.board[2][0] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
     });
@@ -197,6 +211,7 @@ function gameplay() {
             } else {
                 eight.innerHTML = "x";
                 gameboard.board[2][1] = 'x';
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[2][1] != "") {
@@ -204,6 +219,7 @@ function gameplay() {
             } else {
                 eight.innerHTML = "o";
                 gameboard.board[2][1] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
     });
@@ -214,6 +230,7 @@ function gameplay() {
             } else {
                 nine.innerHTML = "x";
                 gameboard.board[2][2] = 'x';
+                turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
                 currentPlayer = 'o';}
         } else {
             if (gameboard.board[2][2] != "") {
@@ -221,8 +238,10 @@ function gameplay() {
             } else {
                 nine.innerHTML = "o";
                 gameboard.board[2][2] = 'o';
+                turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
                 currentPlayer = 'x';}
         }
+        
     });
 
     // add gameplay logic 
