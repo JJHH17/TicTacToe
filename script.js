@@ -273,7 +273,7 @@ function gameplay() {
 
 function winCheck() {
     if (gameboard.board[0][0] == 'x' && gameboard.board[0][1] == 'x' && gameboard.board[0][2] == 'x' ) {
-        alert("Hello")
+        alert(`${newPlayer.player1Name} wins!`); // Fix this bug, returns undefined 
     }
 }
 
