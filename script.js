@@ -79,7 +79,8 @@ function gameplay() {
                 one.innerHTML = "x";
                 gameboard.board[0][0] = 'x'; // Appends to array
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[0][0] != "") {
                 alert("This spot is taken!");
@@ -87,7 +88,8 @@ function gameplay() {
                 one.innerHTML = "o";
                 gameboard.board[0][0] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
     });
     two.addEventListener("click", () => {
@@ -98,7 +100,8 @@ function gameplay() {
                 two.innerHTML = "x";
                 gameboard.board[0][1] = 'x';
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[0][1] != "") {
                 alert("This spot is taken!");
@@ -106,7 +109,8 @@ function gameplay() {
                 two.innerHTML = "o";
                 gameboard.board[0][1] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
     });
     three.addEventListener("click", () => {
@@ -117,7 +121,8 @@ function gameplay() {
                 three.innerHTML = "x";
                 gameboard.board[0][2] = 'x';
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[0][2] != "") {
                 alert("This spot is taken!");
@@ -125,7 +130,8 @@ function gameplay() {
                 three.innerHTML = "o";
                 gameboard.board[0][2] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
     });
     four.addEventListener("click", () => {
@@ -136,7 +142,8 @@ function gameplay() {
                 four.innerHTML = "x";
                 gameboard.board[1][0] = 'x';
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[1][0] != "") {
                 alert("This spot is taken!");
@@ -144,7 +151,8 @@ function gameplay() {
                 four.innerHTML = "o";
                 gameboard.board[1][0] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
     });
     five.addEventListener("click", () => {
@@ -155,7 +163,8 @@ function gameplay() {
                 five.innerHTML = "x";
                 gameboard.board[1][1] = 'x';
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[1][1] != "") {
                 alert("This spot is taken!");
@@ -163,7 +172,8 @@ function gameplay() {
                 five.innerHTML = "o";
                 gameboard.board[1][1] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
     });
     six.addEventListener("click", () => {
@@ -174,7 +184,8 @@ function gameplay() {
                 six.innerHTML = "x";
                 gameboard.board[1][2] = 'x';
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[1][2] != "") {
                 alert("This spot is taken!");
@@ -182,7 +193,8 @@ function gameplay() {
                 six.innerHTML = "o";
                 gameboard.board[1][2] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
     });
     seven.addEventListener("click", () => {
@@ -193,7 +205,8 @@ function gameplay() {
                 seven.innerHTML = "x";
                 gameboard.board[2][0] = 'x';
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[2][0] != "") {
                 alert("This spot is taken!");
@@ -201,7 +214,8 @@ function gameplay() {
                 seven.innerHTML = "o";
                 gameboard.board[2][0] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
     });
     eight.addEventListener("click", () => {
@@ -212,7 +226,8 @@ function gameplay() {
                 eight.innerHTML = "x";
                 gameboard.board[2][1] = 'x';
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[2][1] != "") {
                 alert("This spot is taken!");
@@ -220,7 +235,8 @@ function gameplay() {
                 eight.innerHTML = "o";
                 gameboard.board[2][1] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
     });
     nine.addEventListener("click", () => {
@@ -231,7 +247,8 @@ function gameplay() {
                 nine.innerHTML = "x";
                 gameboard.board[2][2] = 'x';
                 turnElement.innerHTML = `It's ${newPlayer.player2Name}'s turn!`;
-                currentPlayer = 'o';}
+                currentPlayer = 'o';
+                winCheck()}
         } else {
             if (gameboard.board[2][2] != "") {
                 alert("This spot is taken!");
@@ -239,13 +256,12 @@ function gameplay() {
                 nine.innerHTML = "o";
                 gameboard.board[2][2] = 'o';
                 turnElement.innerHTML = `It's ${newPlayer.player1Name}'s turn!`;
-                currentPlayer = 'x';}
+                currentPlayer = 'x';
+                winCheck()}
         }
-        
-        // Apply win condition
-        // Player 1 win
-        // TODO!!!!!!
-        
+        // Add winning logic 
+        // if gameboard row 1 is x win]
+
     });
 
     // add gameplay logic 
@@ -253,6 +269,12 @@ function gameplay() {
     // else if player 2 does, they will
     // else, draw
 
+}
+
+function winCheck() {
+    if (gameboard.board[0][0] == 'x' && gameboard.board[0][1] == 'x' && gameboard.board[0][2] == 'x' ) {
+        alert("Hello")
+    }
 }
 
 gameplay();
