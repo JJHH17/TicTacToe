@@ -70,103 +70,104 @@ function gameplay() {
 
     let currentPlayer = "x"; // Alternates between "X" and "O"
     
-    // Add button click - add this next
+    // Add button click 
     one.addEventListener("click", () => {
         if (currentPlayer == "x") {
             one.innerHTML = "x";
-            // append to array
+            gameboard.board[0][0] = 'x'; // Appends to array
             currentPlayer = 'o';
         } else {
             one.innerHTML = "o";
             // append to array
+            gameboard.board[0][0] = 'o';
             currentPlayer = 'x';
         }
     });
     two.addEventListener("click", () => {
         if (currentPlayer == "x") {
             two.innerHTML = "x";
-            // append to array
+            gameboard.board[0][1] = 'x';
             currentPlayer = 'o';
         } else {
             two.innerHTML = "o";
-            // append to array
+            gameboard.board[0][1] = 'o';
             currentPlayer = 'x';
         }
     });
     three.addEventListener("click", () => {
         if (currentPlayer == "x") {
             three.innerHTML = "x";
-            // append to array
+            gameboard.board[0][2] = 'x';
             currentPlayer = 'o';
         } else {
             three.innerHTML = "o";
-            // append to array
+            gameboard.board[0][2] = 'o';
             currentPlayer = 'x';
         }
     });
     four.addEventListener("click", () => {
         if (currentPlayer == "x") {
             four.innerHTML = "x";
-            // append to array
+            gameboard.board[1][0] = 'x';
             currentPlayer = 'o';
         } else {
             four.innerHTML = "o";
-            // append to array
+            gameboard.board[1][0] = 'o';
             currentPlayer = 'x';
         }
     });
     five.addEventListener("click", () => {
         if (currentPlayer == "x") {
             five.innerHTML = "x";
-            // append to array
+            gameboard.board[1][1] = 'x';
             currentPlayer = 'o';
         } else {
             five.innerHTML = "o";
-            // append to array
+            gameboard.board[1][1] = 'o';
             currentPlayer = 'x';
         }
     });
     six.addEventListener("click", () => {
         if (currentPlayer == "x") {
             six.innerHTML = "x";
-            // append to array
+            gameboard.board[1][2] = 'x';
             currentPlayer = 'o';
         } else {
             six.innerHTML = "o";
-            // append to array
+            gameboard.board[1][2] = 'o';
             currentPlayer = 'x';
         }
     });
     seven.addEventListener("click", () => {
         if (currentPlayer == "x") {
             seven.innerHTML = "x";
-            // append to array
+            gameboard.board[2][0] = 'x';
             currentPlayer = 'o';
         } else {
             seven.innerHTML = "o";
-            // append to array
+            gameboard.board[2][0] = 'o';
             currentPlayer = 'x';
         }
     });
     eight.addEventListener("click", () => {
         if (currentPlayer == "x") {
             eight.innerHTML = "x";
-            // append to array
+            gameboard.board[2][1] = 'x';
             currentPlayer = 'o';
         } else {
             eight.innerHTML = "o";
-            // append to array
+            gameboard.board[2][1] = 'o';
             currentPlayer = 'x';
         }
     });
     nine.addEventListener("click", () => {
         if (currentPlayer == "x") {
             nine.innerHTML = "x";
-            // append to array
+            gameboard.board[2][2] = 'x';
             currentPlayer = 'o';
         } else {
             nine.innerHTML = "o";
-            // append to array
+            gameboard.board[2][2] = 'o';
             currentPlayer = 'x';
         }
     });
