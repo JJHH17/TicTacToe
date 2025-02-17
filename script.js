@@ -23,8 +23,8 @@ function player() {
     // Print scores to DOM 
     // inner html to use <p> and <br> where needed here - remove this comment when done!!!
     const scorePrint = document.querySelector("#scores");
-    scorePrint.innerHTML = `<p>Current Scores</p><p>${player1Name}: ${player1Score}</p><p>${player2Name}: 
-    ${player2Score}</p><p>Draw: ${drawScore}`;
+    scorePrint.innerHTML = `<p>Current Scores:</p><br><p>${player1Name}: ${player1Score}</p><br><p>${player2Name}: 
+    ${player2Score}</p><br><p>Draw: ${drawScore}</p>`;
 
     return {player1Name, player2Name, getPlayer1Score, player1Point, getPlayer2Score, player2Point, 
         player1Icon, player2Icon, drawScore, getDrawScore, drawScorePoint};
