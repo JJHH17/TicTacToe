@@ -73,102 +73,155 @@ function gameplay() {
     // Add button click 
     one.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            one.innerHTML = "x";
-            gameboard.board[0][0] = 'x'; // Appends to array
-            currentPlayer = 'o';
+            if (gameboard.board[0][0] != "") {
+                alert("This spot is taken!");
+            } else {
+                one.innerHTML = "x";
+                gameboard.board[0][0] = 'x'; // Appends to array
+                currentPlayer = 'o';}
         } else {
-            one.innerHTML = "o";
-            // append to array
-            gameboard.board[0][0] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[0][0] != "") {
+                alert("This spot is taken!");
+            } else {
+                one.innerHTML = "o";
+                gameboard.board[0][0] = 'o';
+                currentPlayer = 'x';}
         }
     });
     two.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            two.innerHTML = "x";
-            gameboard.board[0][1] = 'x';
-            currentPlayer = 'o';
+            if (gameboard.board[0][1] != "") {
+                alert("This spot is taken!");
+            } else {
+                two.innerHTML = "x";
+                gameboard.board[0][1] = 'x';
+                currentPlayer = 'o';}
         } else {
-            two.innerHTML = "o";
-            gameboard.board[0][1] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[0][1] != "") {
+                alert("This spot is taken!");
+            } else {
+                two.innerHTML = "o";
+                gameboard.board[0][1] = 'o';
+                currentPlayer = 'x';}
         }
     });
     three.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            three.innerHTML = "x";
-            gameboard.board[0][2] = 'x';
-            currentPlayer = 'o';
+            if (gameboard.board[0][2] != "") {
+                alert("This spot is taken!");
+            } else {
+                three.innerHTML = "x";
+                gameboard.board[0][2] = 'x';
+                currentPlayer = 'o';}
         } else {
-            three.innerHTML = "o";
-            gameboard.board[0][2] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[0][2] != "") {
+                alert("This spot is taken!");
+            } else {
+                three.innerHTML = "o";
+                gameboard.board[0][2] = 'o';
+                currentPlayer = 'x';}
         }
     });
     four.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            four.innerHTML = "x";
-            gameboard.board[1][0] = 'x';
-            currentPlayer = 'o';
+            if (gameboard.board[1][0] != "") {
+                alert("This spot is taken!");
+            } else {
+                four.innerHTML = "x";
+                gameboard.board[1][0] = 'x';
+                currentPlayer = 'o';}
         } else {
-            four.innerHTML = "o";
-            gameboard.board[1][0] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[1][0] != "") {
+                alert("This spot is taken!");
+            } else {
+                four.innerHTML = "o";
+                gameboard.board[1][0] = 'o';
+                currentPlayer = 'x';}
         }
     });
     five.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            five.innerHTML = "x";
-            gameboard.board[1][1] = 'x';
-            currentPlayer = 'o';
+            if (gameboard.board[1][1] != "") {
+                alert("This spot is taken!");
+            } else {
+                five.innerHTML = "x";
+                gameboard.board[1][1] = 'x';
+                currentPlayer = 'o';}
         } else {
-            five.innerHTML = "o";
-            gameboard.board[1][1] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[1][1] != "") {
+                alert("This spot is taken!");
+            } else {
+                five.innerHTML = "o";
+                gameboard.board[1][1] = 'o';
+                currentPlayer = 'x';}
         }
     });
     six.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            six.innerHTML = "x";
-            gameboard.board[1][2] = 'x';
-            currentPlayer = 'o';
+            if (gameboard.board[1][2] != "") {
+                alert("This spot is taken!");
+            } else {
+                six.innerHTML = "x";
+                gameboard.board[1][2] = 'x';
+                currentPlayer = 'o';}
         } else {
-            six.innerHTML = "o";
-            gameboard.board[1][2] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[1][2] != "") {
+                alert("This spot is taken!");
+            } else {
+                six.innerHTML = "o";
+                gameboard.board[1][2] = 'o';
+                currentPlayer = 'x';}
         }
     });
     seven.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            seven.innerHTML = "x";
-            gameboard.board[2][0] = 'x';
-            currentPlayer = 'o';
+            if (gameboard.board[2][0] != "") {
+                alert("This spot is taken!");
+            } else {
+                seven.innerHTML = "x";
+                gameboard.board[2][0] = 'x';
+                currentPlayer = 'o';}
         } else {
-            seven.innerHTML = "o";
-            gameboard.board[2][0] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[2][0] != "") {
+                alert("This spot is taken!");
+            } else {
+                seven.innerHTML = "o";
+                gameboard.board[2][0] = 'o';
+                currentPlayer = 'x';}
         }
     });
     eight.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            eight.innerHTML = "x";
-            gameboard.board[2][1] = 'x';
-            currentPlayer = 'o';
+            if (gameboard.board[2][1] != "") {
+                alert("This spot is taken!");
+            } else {
+                eight.innerHTML = "x";
+                gameboard.board[2][1] = 'x';
+                currentPlayer = 'o';}
         } else {
-            eight.innerHTML = "o";
-            gameboard.board[2][1] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[2][1] != "") {
+                alert("This spot is taken!");
+            } else {
+                eight.innerHTML = "o";
+                gameboard.board[2][1] = 'o';
+                currentPlayer = 'x';}
         }
     });
     nine.addEventListener("click", () => {
         if (currentPlayer == "x") {
-            nine.innerHTML = "x";
-            gameboard.board[2][2] = 'x';
-            currentPlayer = 'o';
+            if (gameboard.board[2][2] != "") {
+                alert("This spot is taken!");
+            } else {
+                nine.innerHTML = "x";
+                gameboard.board[2][2] = 'x';
+                currentPlayer = 'o';}
         } else {
-            nine.innerHTML = "o";
-            gameboard.board[2][2] = 'o';
-            currentPlayer = 'x';
+            if (gameboard.board[2][2] != "") {
+                alert("This spot is taken!");
+            } else {
+                nine.innerHTML = "o";
+                gameboard.board[2][2] = 'o';
+                currentPlayer = 'x';}
         }
     });
 
