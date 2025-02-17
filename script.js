@@ -242,6 +242,10 @@ function gameplay() {
                 currentPlayer = 'x';}
         }
         
+        // Apply win condition
+        // Player 1 win
+        // TODO!!!!!!
+        
     });
 
     // add gameplay logic 
