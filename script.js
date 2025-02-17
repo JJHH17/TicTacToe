@@ -42,7 +42,7 @@ const gameboard = (function () {
         ['', '', ''],
     ];
     
-
-})
+    return {board};
+})();
 
 // Gameplay object
