@@ -13,7 +13,7 @@ function player() {
 
     let player2Score = 0;
     const player2Icon = 'o';
-    const getPlayer2Score = () => player1Score;
+    const getPlayer2Score = () => player2Score;
     const player2Point = () => player2Score++;
 
     let drawScore = 0;
@@ -26,10 +26,13 @@ function player() {
     scorePrint.innerHTML = `<p>Current Scores:</p><br><p>${player1Name}: ${player1Score}</p><br><p>${player2Name}: 
     ${player2Score}</p><br><p>Draw: ${drawScore}</p>`;
 
+    // Dynamically updates DOM
+    
+
     return {player1Name, player2Name, getPlayer1Score, player1Point, getPlayer2Score, player2Point, 
         player1Icon, player2Icon, drawScore, getDrawScore, drawScorePoint};
 }
-let newPlayer = player();
+newPlayer = player();
 
 
 // IIFE for gameboard
@@ -267,38 +270,54 @@ function winCheck() {
     // Rows
     if (gameboard.board[0][0] == 'x' && gameboard.board[0][1] == 'x' && gameboard.board[0][2] == 'x') {
         alert(`${newPlayer.player1Name} wins!`); 
+        newPlayer.player1Point();
     } else if (gameboard.board[0][0] == 'o' && gameboard.board[0][1] == 'o' && gameboard.board[0][2] == 'o') {
         alert(`${newPlayer.player2Name} wins!`);
+        newPlayer.player2Point();
     } else if (gameboard.board[1][0] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[1][2] == 'x') {
         alert(`${newPlayer.player1Name} wins!`);
+        newPlayer.player1Point();
     } else if (gameboard.board[1][0] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[1][2] == 'o') {
         alert(`${newPlayer.player2Name} wins!`);
+        newPlayer.player2Point();
     } else if (gameboard.board[2][0] == 'x' && gameboard.board[2][1] == 'x' && gameboard.board[2][2] == 'x') {
         alert(`${newPlayer.player1Name} wins!`);
+        newPlayer.player1Point();
     } else if (gameboard.board[2][0] == 'o' && gameboard.board[2][1] == 'o' && gameboard.board[2][2] == 'o') {
         alert(`${newPlayer.player2Name} wins!`);
+        newPlayer.player2Point();
         // Columns
     } else if (gameboard.board[0][0] == 'x' && gameboard.board[1][0] == 'x' && gameboard.board[2][0] == 'x') {
         alert(`${newPlayer.player1Name} wins!`);
+        newPlayer.player1Point();
     } else if (gameboard.board[0][0] == 'o' && gameboard.board[1][0] == 'o' && gameboard.board[2][0] == 'o') {
         alert(`${newPlayer.player2Name} wins!`);
+        newPlayer.player2Point();
     } else if (gameboard.board[0][1] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][1] == 'x') {
         alert(`${newPlayer.player1Name} wins!`);
+        newPlayer.player1Point();
     } else if (gameboard.board[0][1] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][1] == 'o') {
         alert(`${newPlayer.player2Name} wins!`);
+        newPlayer.player2Point();
     } else if (gameboard.board[0][2] == 'x' && gameboard.board[1][2] == 'x' && gameboard.board[2][2] == 'x') {
         alert(`${newPlayer.player1Name} wins!`);
+        newPlayer.player1Point();
     } else if (gameboard.board[0][2] == 'o' && gameboard.board[1][2] == 'o' && gameboard.board[2][2] == 'o') {
         alert(`${newPlayer.player2Name} wins!`);
+        newPlayer.player2Point();
         // Diagonal
     } else if (gameboard.board[0][0] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][2] == 'x') {
         alert(`${newPlayer.player1Name} wins!`);
+        newPlayer.player1Point();
     } else if (gameboard.board[0][0] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][2] == 'o') {
         alert(`${newPlayer.player2Name} wins!`);
+        newPlayer.player2Point();
     } else if (gameboard.board[0][2] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][0] == 'x') {
         alert(`${newPlayer.player1Name} wins!`);
+        newPlayer.player1Point();
     } else if (gameboard.board[0][2] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][0] == 'o') {
         alert(`${newPlayer.player2Name} wins!`);
+        newPlayer.player2Point();
     } // Add draw condition
 }
 gameplay();
