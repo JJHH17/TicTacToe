@@ -259,22 +259,46 @@ function gameplay() {
                 currentPlayer = 'x';
                 winCheck()}
         }
-        // Add winning logic 
-        // if gameboard row 1 is x win]
-
     });
-
-    // add gameplay logic 
-    // If player 1 fills a row, they win
-    // else if player 2 does, they will
-    // else, draw
-
 }
 
 function winCheck() {
-    if (gameboard.board[0][0] == 'x' && gameboard.board[0][1] == 'x' && gameboard.board[0][2] == 'x' ) {
-        alert(`${newPlayer.player1Name} wins!`); // Fix this bug, returns undefined 
-    }
+    // Checks win condition
+    // Rows
+    if (gameboard.board[0][0] == 'x' && gameboard.board[0][1] == 'x' && gameboard.board[0][2] == 'x') {
+        alert(`${newPlayer.player1Name} wins!`); 
+    } else if (gameboard.board[0][0] == 'o' && gameboard.board[0][1] == 'o' && gameboard.board[0][2] == 'o') {
+        alert(`${newPlayer.player2Name} wins!`);
+    } else if (gameboard.board[1][0] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[1][2] == 'x') {
+        alert(`${newPlayer.player1Name} wins!`);
+    } else if (gameboard.board[1][0] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[1][2] == 'o') {
+        alert(`${newPlayer.player2Name} wins!`);
+    } else if (gameboard.board[2][0] == 'x' && gameboard.board[2][1] == 'x' && gameboard.board[2][2] == 'x') {
+        alert(`${newPlayer.player1Name} wins!`);
+    } else if (gameboard.board[2][0] == 'o' && gameboard.board[2][1] == 'o' && gameboard.board[2][2] == 'o') {
+        alert(`${newPlayer.player2Name} wins!`);
+        // Columns
+    } else if (gameboard.board[0][0] == 'x' && gameboard.board[1][0] == 'x' && gameboard.board[2][0] == 'x') {
+        alert(`${newPlayer.player1Name} wins!`);
+    } else if (gameboard.board[0][0] == 'o' && gameboard.board[1][0] == 'o' && gameboard.board[2][0] == 'o') {
+        alert(`${newPlayer.player2Name} wins!`);
+    } else if (gameboard.board[0][1] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][1] == 'x') {
+        alert(`${newPlayer.player1Name} wins!`);
+    } else if (gameboard.board[0][1] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][1] == 'o') {
+        alert(`${newPlayer.player2Name} wins!`);
+    } else if (gameboard.board[0][2] == 'x' && gameboard.board[1][2] == 'x' && gameboard.board[2][2] == 'x') {
+        alert(`${newPlayer.player1Name} wins!`);
+    } else if (gameboard.board[0][2] == 'o' && gameboard.board[1][2] == 'o' && gameboard.board[2][2] == 'o') {
+        alert(`${newPlayer.player2Name} wins!`);
+        // Diagonal
+    } else if (gameboard.board[0][0] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][2] == 'x') {
+        alert(`${newPlayer.player1Name} wins!`);
+    } else if (gameboard.board[0][0] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][2] == 'o') {
+        alert(`${newPlayer.player2Name} wins!`);
+    } else if (gameboard.board[0][2] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][0] == 'x') {
+        alert(`${newPlayer.player1Name} wins!`);
+    } else if (gameboard.board[0][2] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][0] == 'o') {
+        alert(`${newPlayer.player2Name} wins!`);
+    } // Add draw condition
 }
-
 gameplay();
