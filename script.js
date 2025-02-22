@@ -26,9 +26,13 @@ function player() {
     const updateScoreboard = () => {
         scorePrint.innerHTML = `
         <p>Current Scores:</p>
+        <br>
         <p>${player1Name}: ${player1Score}</p>
+        <br>
         <p>${player2Name}: ${player2Score}</p>
-        <p>Draws: ${drawScore}</p>`;
+        <br>
+        <p>Draws: ${drawScore}</p>
+        <br>`;
     };
     updateScoreboard();
 
