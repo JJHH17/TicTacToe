@@ -20,17 +20,20 @@ function player() {
     const getDrawScore = () => drawScore;
     const drawScorePoint = () => drawScore++;
 
-    // Print scores to DOM 
-    // inner html to use <p> and <br> where needed here - remove this comment when done!!!
     const scorePrint = document.querySelector("#scores");
-    scorePrint.innerHTML = `<p>Current Scores:</p><br><p>${player1Name}: ${player1Score}</p><br><p>${player2Name}: 
-    ${player2Score}</p><br><p>Draw: ${drawScore}</p>`;
 
-    // Dynamically updates DOM
-    
+    // Updates scoreboard
+    const updateScoreboard = () => {
+        scorePrint.innerHTML = `
+        <p>Current Scores:</p>
+        <p>${player1Name}: ${player1Score}</p>
+        <p>${player2Name}: ${player2Score}</p>
+        <p>Draws: ${drawScore}</p>`;
+    };
+    updateScoreboard();
 
     return {player1Name, player2Name, getPlayer1Score, player1Point, getPlayer2Score, player2Point, 
-        player1Icon, player2Icon, drawScore, getDrawScore, drawScorePoint};
+        player1Icon, player2Icon, drawScore, getDrawScore, drawScorePoint, updateScoreboard};
 }
 newPlayer = player();
 gameplay();
@@ -265,68 +268,62 @@ function gameplay() {
     });
 }
 
-// This checks the win conditions of the game
 function winCheck() {
     const board = gameboard.board;
-
-    // Possible winning combinations
-    const winConditions = [
+    const winPatterns = [
         // Rows
         [board[0][0], board[0][1], board[0][2]],
         [board[1][0], board[1][1], board[1][2]],
         [board[2][0], board[2][1], board[2][2]],
+
         // Columns
         [board[0][0], board[1][0], board[2][0]],
         [board[0][1], board[1][1], board[2][1]],
         [board[0][2], board[1][2], board[2][2]],
+
         // Diagonals
         [board[0][0], board[1][1], board[2][2]],
-        [board[0][2], board[1][1], board[2][0]]
+        [board[0][2], board[1][1], board[2][0]],
     ];
 
-    // Check for a winner
-    for (let condition of winConditions) {
-        if (condition[0] !== "" && condition[0] === condition[1] && condition[1] === condition[2]) {
-            alert(`${condition[0] === 'x' ? newPlayer.player1Name : newPlayer.player2Name} wins!`);
-            
-            // Reset gameboard array
-            gameboard.board = [
-                ['', '', ''],
-                ['', '', ''],
-                ['', '', '']
-            ];
-
-            // Reset the UI (clear all divs)
-            document.querySelectorAll(".board-cell").forEach(cell => cell.innerHTML = "");
-
-            return; // Stop further checking
+    // Check if any pattern has all 'x' or all 'o'
+    for (let pattern of winPatterns) {
+        if (pattern.every(cell => cell === 'x')) {
+            alert(`${newPlayer.player1Name} wins!`);
+            newPlayer.player1Point();
+            newPlayer.updateScoreboard();
+            resetBoard();
+            return;
+        } else if (pattern.every(cell => cell === 'o')) {
+            alert(`${newPlayer.player2Name} wins!`);
+            newPlayer.player2Point();
+            newPlayer.updateScoreboard();
+            resetBoard();
+            return;
         }
     }
 
-    // Check for a draw
-    if (board.flat().every(cell => cell !== "")) {
-        alert("It's a draw!");
-        
-        // Reset gameboard array
-        gameboard.board = [
-            ['', '', ''],
-            ['', '', ''],
-            ['', '', '']
-        ];
-
-        // Reset the UI (clear all divs)
-        document.querySelectorAll(".board-cell").forEach(cell => cell.innerHTML = "");
+    // Check for a tie
+    if (board.flat().every(cell => cell !== '')) {
+        alert("It's a tie!");
+        newPlayer.drawScorePoint();
+        newPlayer.updateScoreboard();
+        resetBoard();
     }
 }
 
-// Function to reset the board
+// For resettng the game board and array
 function resetBoard() {
-    for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 3; j++) {
-            gameboard.board[i][j] = "";
-        }
-    }
+    gameboard.board = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ];
 
-    // Clear the UI (Reset cell innerHTML)
-    document.querySelectorAll(".cell").forEach(cell => cell.innerHTML = "");
+    document.querySelectorAll('.cell').forEach(cell => {
+        cell.innerHTML = "";
+    });
+
+    currentPlayer = 'x'; // Reset turn to player 1
 }
+
