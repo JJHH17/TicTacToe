@@ -45,3 +45,11 @@ h1 {
     align-items: center;
     font-size: xx-large;
 }
+
+#resetButton {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    font-size: large;
+    border-radius: 25px;
+}
