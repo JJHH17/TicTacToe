@@ -331,3 +331,16 @@ function resetBoard() {
     currentPlayer = 'x'; // Reset turn to player 1
 }
 
+// Add reset button functionality
+const resetButton = document.querySelector("#resetButton");
+resetButton.addEventListener("click", () => {
+    gameboard.board = [        
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', '']
+    ]; // This resets the game array
+    document.querySelectorAll('.cell').forEach(cell => {
+        cell.innerHTML = "";
+    }); // This resets the UI for the game
+});
+
