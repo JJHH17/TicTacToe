@@ -33,7 +33,7 @@ function player() {
         player1Icon, player2Icon, drawScore, getDrawScore, drawScorePoint};
 }
 newPlayer = player();
-
+gameplay();
 
 // IIFE for gameboard
 const gameboard = (function () {
@@ -265,59 +265,68 @@ function gameplay() {
     });
 }
 
+// This checks the win conditions of the game
 function winCheck() {
-    // Checks win condition
-    // Rows
-    if (gameboard.board[0][0] == 'x' && gameboard.board[0][1] == 'x' && gameboard.board[0][2] == 'x') {
-        alert(`${newPlayer.player1Name} wins!`); 
-        newPlayer.player1Point();
-    } else if (gameboard.board[0][0] == 'o' && gameboard.board[0][1] == 'o' && gameboard.board[0][2] == 'o') {
-        alert(`${newPlayer.player2Name} wins!`);
-        newPlayer.player2Point();
-    } else if (gameboard.board[1][0] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[1][2] == 'x') {
-        alert(`${newPlayer.player1Name} wins!`);
-        newPlayer.player1Point();
-    } else if (gameboard.board[1][0] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[1][2] == 'o') {
-        alert(`${newPlayer.player2Name} wins!`);
-        newPlayer.player2Point();
-    } else if (gameboard.board[2][0] == 'x' && gameboard.board[2][1] == 'x' && gameboard.board[2][2] == 'x') {
-        alert(`${newPlayer.player1Name} wins!`);
-        newPlayer.player1Point();
-    } else if (gameboard.board[2][0] == 'o' && gameboard.board[2][1] == 'o' && gameboard.board[2][2] == 'o') {
-        alert(`${newPlayer.player2Name} wins!`);
-        newPlayer.player2Point();
+    const board = gameboard.board;
+
+    // Possible winning combinations
+    const winConditions = [
+        // Rows
+        [board[0][0], board[0][1], board[0][2]],
+        [board[1][0], board[1][1], board[1][2]],
+        [board[2][0], board[2][1], board[2][2]],
         // Columns
-    } else if (gameboard.board[0][0] == 'x' && gameboard.board[1][0] == 'x' && gameboard.board[2][0] == 'x') {
-        alert(`${newPlayer.player1Name} wins!`);
-        newPlayer.player1Point();
-    } else if (gameboard.board[0][0] == 'o' && gameboard.board[1][0] == 'o' && gameboard.board[2][0] == 'o') {
-        alert(`${newPlayer.player2Name} wins!`);
-        newPlayer.player2Point();
-    } else if (gameboard.board[0][1] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][1] == 'x') {
-        alert(`${newPlayer.player1Name} wins!`);
-        newPlayer.player1Point();
-    } else if (gameboard.board[0][1] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][1] == 'o') {
-        alert(`${newPlayer.player2Name} wins!`);
-        newPlayer.player2Point();
-    } else if (gameboard.board[0][2] == 'x' && gameboard.board[1][2] == 'x' && gameboard.board[2][2] == 'x') {
-        alert(`${newPlayer.player1Name} wins!`);
-        newPlayer.player1Point();
-    } else if (gameboard.board[0][2] == 'o' && gameboard.board[1][2] == 'o' && gameboard.board[2][2] == 'o') {
-        alert(`${newPlayer.player2Name} wins!`);
-        newPlayer.player2Point();
-        // Diagonal
-    } else if (gameboard.board[0][0] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][2] == 'x') {
-        alert(`${newPlayer.player1Name} wins!`);
-        newPlayer.player1Point();
-    } else if (gameboard.board[0][0] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][2] == 'o') {
-        alert(`${newPlayer.player2Name} wins!`);
-        newPlayer.player2Point();
-    } else if (gameboard.board[0][2] == 'x' && gameboard.board[1][1] == 'x' && gameboard.board[2][0] == 'x') {
-        alert(`${newPlayer.player1Name} wins!`);
-        newPlayer.player1Point();
-    } else if (gameboard.board[0][2] == 'o' && gameboard.board[1][1] == 'o' && gameboard.board[2][0] == 'o') {
-        alert(`${newPlayer.player2Name} wins!`);
-        newPlayer.player2Point();
-    } // Add draw condition
+        [board[0][0], board[1][0], board[2][0]],
+        [board[0][1], board[1][1], board[2][1]],
+        [board[0][2], board[1][2], board[2][2]],
+        // Diagonals
+        [board[0][0], board[1][1], board[2][2]],
+        [board[0][2], board[1][1], board[2][0]]
+    ];
+
+    // Check for a winner
+    for (let condition of winConditions) {
+        if (condition[0] !== "" && condition[0] === condition[1] && condition[1] === condition[2]) {
+            alert(`${condition[0] === 'x' ? newPlayer.player1Name : newPlayer.player2Name} wins!`);
+            
+            // Reset gameboard array
+            gameboard.board = [
+                ['', '', ''],
+                ['', '', ''],
+                ['', '', '']
+            ];
+
+            // Reset the UI (clear all divs)
+            document.querySelectorAll(".board-cell").forEach(cell => cell.innerHTML = "");
+
+            return; // Stop further checking
+        }
+    }
+
+    // Check for a draw
+    if (board.flat().every(cell => cell !== "")) {
+        alert("It's a draw!");
+        
+        // Reset gameboard array
+        gameboard.board = [
+            ['', '', ''],
+            ['', '', ''],
+            ['', '', '']
+        ];
+
+        // Reset the UI (clear all divs)
+        document.querySelectorAll(".board-cell").forEach(cell => cell.innerHTML = "");
+    }
 }
-gameplay();
+
+// Function to reset the board
+function resetBoard() {
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            gameboard.board[i][j] = "";
+        }
+    }
+
+    // Clear the UI (Reset cell innerHTML)
+    document.querySelectorAll(".cell").forEach(cell => cell.innerHTML = "");
+}
