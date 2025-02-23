@@ -22,6 +22,14 @@ function player() {
 
     const scorePrint = document.querySelector("#scores");
 
+    // Resets scoreboard when called
+    const resetScores = () => {
+        player1Score = 0;
+        player2Score = 0;
+        drawScore = 0; 
+        updateScoreboard();
+    };
+
     // Updates scoreboard
     const updateScoreboard = () => {
         scorePrint.innerHTML = `
@@ -37,7 +45,7 @@ function player() {
     updateScoreboard();
 
     return {player1Name, player2Name, getPlayer1Score, player1Point, getPlayer2Score, player2Point, 
-        player1Icon, player2Icon, drawScore, getDrawScore, drawScorePoint, updateScoreboard};
+        player1Icon, player2Icon, drawScore, getDrawScore, drawScorePoint, updateScoreboard, resetScores};
 }
 newPlayer = player();
 gameplay();
@@ -339,8 +347,12 @@ resetButton.addEventListener("click", () => {
     ['', '', ''],
     ['', '', '']
     ]; // This resets the game array
+
     document.querySelectorAll('.cell').forEach(cell => {
         cell.innerHTML = "";
     }); // This resets the UI for the game
+
+    // Reset player scores
+    newPlayer.resetScores();
 });
 
