@@ -6,3 +6,7 @@ A simple Tic Tac Toe browser game.
 - Use IIFE functions
 - Use factory functions over constructors 
 
+# Project Completed:
+- Used objects 
+- Used IIFE's 
+- Future learnings involved making more concise and efficient code
